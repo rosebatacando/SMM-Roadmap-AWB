@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alchemy Wealth Builders — Social Media Management Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #C9A84C; --gold-light: #F0DFA0; --gold-dark: #8B6914;
+    --navy: #0D1B2A; --navy-mid: #1A2E44; --navy-light: #2C4A6B;
+    --cream: #FAF7F2; --cream-mid: #F2EDE4; --white: #FFFFFF;
+    --text-primary: #0D1B2A; --text-secondary: #4A6080; --text-muted: #7A90A8;
+    --border: rgba(201,168,76,0.2); --border-light: rgba(13,27,42,0.1);
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text-primary); line-height: 1.6; font-size: 15px; }
+
+  .cover { background: var(--navy); padding: 80px 60px 60px; text-align: center; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top:0;left:0;right:0;bottom:0; background: repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,0.03) 40px,rgba(201,168,76,0.03) 41px); }
+  .cover-badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; padding: 6px 20px; margin-bottom: 32px; position: relative; }
+  .cover h1 { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 16px; position: relative; }
+  .cover h1 span { color: var(--gold); }
+  .cover-sub { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 560px; margin: 0 auto 40px; font-weight: 300; letter-spacing: 0.3px; position: relative; }
+  .cover-meta { display: flex; justify-content: center; gap: 40px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(201,168,76,0.2); flex-wrap: wrap; position: relative; }
+  .cover-meta-item { text-align: center; }
+  .cover-meta-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+  .cover-meta-value { font-size: 14px; color: var(--gold); font-weight: 500; }
+
+  .services-bar { background: var(--navy-mid); border-top: 1px solid rgba(201,168,76,0.15); padding: 20px 60px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .service-pill { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); color: var(--gold-light); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 6px 18px; border-radius: 30px; }
+
+  .nav-toc { background: #0a1520; padding: 20px 60px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .nav-toc a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+  .nav-toc a:hover { color: var(--gold); }
+
+  .section { padding: 64px 60px; border-bottom: 1px solid var(--border-light); }
+  .section:nth-child(even) { background: var(--white); }
+  .section-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .section-num { width: 28px; height: 28px; background: var(--gold); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-dark); }
+  .section h2 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600; color: var(--navy); margin-bottom: 24px; line-height: 1.2; }
+  .section-intro { font-size: 15px; color: var(--text-secondary); max-width: 720px; margin-bottom: 32px; line-height: 1.7; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  .card { background: var(--white); border: 1px solid var(--border-light); border-radius: 12px; padding: 24px; }
+  .section:nth-child(even) .card { background: var(--cream); }
+  .card-gold { border-top: 3px solid var(--gold); }
+  .card-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--gold-light), rgba(201,168,76,0.3)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 16px; }
+  .card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .card ul { list-style: none; margin-top: 8px; }
+  .card ul li { font-size: 13px; color: var(--text-secondary); padding: 4px 0 4px 16px; position: relative; line-height: 1.5; }
+  .card ul li::before { content: '›'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+  .dark-card { background: var(--navy) !important; border-color: rgba(201,168,76,0.3) !important; }
+  .dark-card h3 { color: var(--gold) !important; }
+  .dark-card p, .dark-card li { color: rgba(255,255,255,0.75) !important; }
+  .dark-card li::before { color: var(--gold) !important; }
+
+  .smart-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; }
+  .smart-cell { padding: 24px 20px; background: var(--white); }
+  .section:nth-child(even) .smart-cell { background: var(--cream-mid); }
+  .smart-letter { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .smart-word { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+  .smart-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+  .persona-card { background: var(--white); border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; }
+  .section:nth-child(even) .persona-card { background: var(--cream); }
+  .persona-header { background: var(--navy); padding: 20px 24px; display: flex; align-items: center; gap: 16px; }
+  .persona-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--navy); flex-shrink: 0; }
+  .persona-name { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+  .persona-tagline { font-size: 11px; color: rgba(255,255,255,0.5); }
+  .persona-body { padding: 20px 24px; }
+  .persona-row { display: flex; gap: 8px; margin-bottom: 10px; align-items: flex-start; }
+  .persona-row-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-dark); min-width: 80px; padding-top: 2px; flex-shrink: 0; }
+  .persona-row-val { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .tag { display: inline-block; background: rgba(201,168,76,0.12); color: var(--gold-dark); border: 1px solid rgba(201,168,76,0.3); font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; margin: 2px 2px 2px 0; }
+
+  .platform-card { background: var(--white); border: 1px solid var(--border-light); border-radius: 12px; padding: 24px; position: relative; }
+  .section:nth-child(even) .platform-card { background: var(--cream); }
+  .platform-primary { border: 2px solid var(--gold); }
+  .platform-badge { position: absolute; top: -10px; right: 16px; background: var(--gold); color: var(--navy); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
+  .platform-name { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .platform-role { font-size: 12px; color: var(--gold-dark); font-weight: 600; margin-bottom: 10px; }
+  .platform-stat { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
+
+  .pillar-card { background: var(--navy); border-radius: 12px; padding: 24px; height: 100%; }
+  .pillar-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: rgba(201,168,76,0.25); line-height: 1; margin-bottom: 8px; }
+  .pillar-name { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
+  .pillar-desc { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 12px; }
+  .pillar-examples { list-style: none; }
+  .pillar-examples li { font-size: 11px; color: rgba(255,255,255,0.45); padding: 3px 0 3px 14px; position: relative; }
+  .pillar-examples li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 10px; }
+
+  .calendar-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .calendar-table th { background: var(--navy); color: var(--gold); padding: 12px 14px; text-align: left; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+  .calendar-table td { padding: 11px 14px; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); vertical-align: top; }
+  .calendar-table tr:hover td { background: rgba(201,168,76,0.04); }
+  .calendar-table td:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+  .ptag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 10px; margin: 1px; white-space: nowrap; }
+  .tag-li { background: rgba(24,100,173,0.1); color: #185FAD; }
+  .tag-ig { background: rgba(193,53,132,0.1); color: #C13584; }
+  .tag-fb { background: rgba(24,119,242,0.1); color: #1877F2; }
+  .tag-yt { background: rgba(200,0,0,0.1); color: #BB0000; }
+  .tag-tk { background: rgba(0,0,0,0.07); color: #444; }
+
+  .schedule-row { display: flex; align-items: stretch; border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+  .schedule-day { background: var(--navy); color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 14px 16px; display: flex; align-items: center; min-width: 100px; }
+  .schedule-items { flex: 1; padding: 10px 14px; background: var(--white); display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+  .section:nth-child(even) .schedule-items { background: var(--cream-mid); }
+  .schedule-item { font-size: 12px; color: var(--text-secondary); background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 6px; padding: 5px 11px; }
+  .schedule-item strong { color: var(--navy); font-weight: 600; }
+  .schedule-item.highlight { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+
+  .kpi-block { background: var(--navy); border-radius: 12px; padding: 24px; }
+  .kpi-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .kpi-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 12px; }
+  .kpi-row:last-child { border-bottom: none; }
+  .kpi-name { font-size: 12px; color: rgba(255,255,255,0.7); }
+  .kpi-target { font-size: 12px; font-weight: 600; color: var(--gold-light); white-space: nowrap; }
+
+  .answer-box { background: var(--navy); border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; padding: 22px 28px; margin-bottom: 18px; }
+  .answer-q { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .answer-a { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+
+  .service-section { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 28px; margin-bottom: 20px; }
+  .service-section-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+  .service-section-sub { font-size: 12px; color: var(--gold-dark); font-weight: 600; margin-bottom: 14px; }
+  .service-section p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+
+  .brokerage-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 14px; }
+  .brokerage-item { background: var(--white); border: 1px solid var(--border-light); border-radius: 8px; padding: 14px 16px; }
+  .section:nth-child(even) .brokerage-item { background: var(--cream-mid); }
+  .brokerage-item-title { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .brokerage-item-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
+
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), transparent); }
+  .timeline-item { position: relative; margin-bottom: 28px; }
+  .timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: 2px solid var(--cream); }
+  .section:nth-child(even) .timeline-item::before { border-color: var(--white); }
+  .timeline-phase { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 4px; }
+  .timeline-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .timeline-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  .footer { background: var(--navy); padding: 40px 60px; text-align: center; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
+  .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+
+  @media (max-width: 900px) {
+    .cover { padding: 48px 24px 40px; } .cover h1 { font-size: 34px; }
+    .section { padding: 44px 20px; } .nav-toc { padding: 14px 20px; }
+    .services-bar { padding: 16px 20px; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .smart-grid { grid-template-columns: 1fr 1fr; }
+    .brokerage-grid { grid-template-columns: 1fr; }
+    .schedule-row { flex-direction: column; }
+    .footer { padding: 32px 24px; }
+    .cover-meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover" id="top">
+  <div class="cover-badge">Strategic Document · 2025–2026</div>
+  <h1>Social Media<br><span>Management Roadmap</span></h1>
+  <p class="cover-sub">A comprehensive 12-month blueprint for Alchemy Wealth Builders — covering Investment Syndication, Real Estate Brokerage, and Commercial Real Estate — to build authority, attract clients and investors, and drive measurable growth.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><div class="cover-meta-label">Brand</div><div class="cover-meta-value">Alchemy Wealth Builders</div></div>
+    <div class="cover-meta-item"><div class="cover-meta-label">Founder</div><div class="cover-meta-value">Ankit Desai</div></div>
+    <div class="cover-meta-item"><div class="cover-meta-label">Platforms</div><div class="cover-meta-value">LinkedIn · Instagram · YouTube · Facebook · TikTok</div></div>
+    <div class="cover-meta-item"><div class="cover-meta-label">Review Cycle</div><div class="cover-meta-value">Monthly Reporting · Quarterly Strategy</div></div>
+  </div>
+</div>
+
+<!-- SERVICES BAR -->
+<div class="services-bar">
+  <div class="service-pill">🏢 Real Estate Syndication</div>
+  <div class="service-pill">🏘️ RE Brokerage Services</div>
+  <div class="service-pill">🏗️ Commercial Real Estate (CRE)</div>
+  <div class="service-pill">💼 Fund Management</div>
+  <div class="service-pill">🏨 Hotel & Hospitality</div>
+  <div class="service-pill">🏠 Residential Assisted Living</div>
+  <div class="service-pill">🤝 Business Buy/Sell</div>
+</div>
+
+<!-- NAV -->
+<div class="nav-toc">
+  <a href="#q0">Strategic Questions</a>
+  <a href="#s1">SMART Goals</a>
+  <a href="#s2">Personas</a>
+  <a href="#s3">Competitors</a>
+  <a href="#s4">Platforms</a>
+  <a href="#s5">Content Pillars</a>
+  <a href="#s6">Content Calendar</a>
+  <a href="#s7">Content Formats</a>
+  <a href="#s8">Posting Schedule</a>
+  <a href="#s9">Paid Advertising</a>
+  <a href="#s10">Community Management</a>
+  <a href="#s11">Influencer & Partnerships</a>
+  <a href="#s12">KPIs & Metrics</a>
+  <a href="#s13">Reporting & Optimization</a>
+</div>
+
+<!-- 0: STRATEGIC QUESTIONS -->
+<div class="section" id="q0">
+  <div class="section-eyebrow"><div class="section-num">0</div><div class="section-label">Foundation</div></div>
+  <h2>The Four Strategic Questions</h2>
+  <p class="section-intro">Alchemy Wealth Builders operates three interconnected business lines: Investment Syndication & Fund Management, Real Estate Brokerage (residential, commercial, business buy/sell), and Commercial Real Estate (CRE) — including hotels, multifamily, and assisted living. Every social media decision must serve all three.</p>
+  <div class="answer-box">
+    <div class="answer-q">Why are we posting? — Goals</div>
+    <div class="answer-a">To position Alchemy Wealth Builders as the premier authority across three verticals: (1) passive real estate investing and syndication for accredited investors, (2) full-service brokerage for buyers, sellers, and business owners, and (3) commercial real estate including hotels, multifamily, and assisted living. Every post drives toward three actions: Investor Club sign-ups, brokerage inquiry form submissions, or discovery call bookings.</div>
+  </div>
+  <div class="answer-box">
+    <div class="answer-q">Who are we speaking to? — Audience</div>
+    <div class="answer-a">Four personas: The Aspiring Passive Investor (W2 professionals seeking financial freedom through syndication), The Accredited Diversifier (high-net-worth individuals seeking CRE exposure), The Property Buyer/Seller (residential and commercial clients needing brokerage services), and The Business Owner (entrepreneurs looking to buy or sell a business through Alchemy's brokerage division).</div>
+  </div>
+  <div class="answer-box">
+    <div class="answer-q">What will we post? — Content Pillars & Formats</div>
+    <div class="answer-a">Seven content pillars covering: Real Estate Education, Deal Spotlight (syndication & CRE), Brokerage Showcase (listings, buyer/seller tips, business transactions), Financial Freedom Lifestyle, Market Insights, Behind the Brand (Ankit Desai's story and team), and Social Proof & Community. Delivered through carousels, Reels, YouTube deep-dives, thought leadership articles, listing showcases, and live Q&As.</div>
+  </div>
+  <div class="answer-box">
+    <div class="answer-q">Where and when will we post? — Platforms & Schedule</div>
+    <div class="answer-a">Primary: LinkedIn (investor and professional audience, M/W/F) and Instagram (brokerage listings, brand awareness, daily). Secondary: YouTube (weekly long-form), Facebook (community group + local brokerage reach, 3x/week), TikTok (reach and awareness, 5x/week). Peak windows: 7–9 AM and 6–8 PM US Eastern/Pacific time.</div>
+  </div>
+  <div class="answer-box" style="margin-bottom:0;">
+    <div class="answer-q">How will we measure success? — KPIs & Reporting</div>
+    <div class="answer-a">Three conversion tracks: (1) Investor Club sign-ups (target 50/month by Month 6), (2) Brokerage inquiry form submissions (target 20/month by Month 4), and (3) Discovery call bookings (target 30/month by Month 9). Supporting metrics: follower growth (15% MoM), engagement rates (LinkedIn ≥3%, Instagram ≥4%), and email list growth (500/month). Monthly reporting with quarterly strategy pivots.</div>
+  </div>
+</div>
+
+<!-- 1: SMART GOALS -->
+<div class="section" id="s1">
+  <div class="section-eyebrow"><div class="section-num">1</div><div class="section-label">Goal Setting</div></div>
+  <h2>SMART Goals</h2>
+  <p class="section-intro">Goals are set across all three business lines — Syndication/Investment, Brokerage, and CRE — ensuring each service area has measurable social media outcomes tied to real business growth.</p>
+  <div class="smart-grid" style="margin-bottom:32px;">
+    <div class="smart-cell"><div class="smart-letter">S</div><div class="smart-word">Specific</div><div class="smart-desc">Goals name an exact platform, metric, and outcome — never vague aims like "grow social media."</div></div>
+    <div class="smart-cell"><div class="smart-letter">M</div><div class="smart-word">Measurable</div><div class="smart-desc">Each goal has a number trackable in platform analytics, UTM data, or CRM dashboards.</div></div>
+    <div class="smart-cell"><div class="smart-letter">A</div><div class="smart-word">Achievable</div><div class="smart-desc">Targets are ambitious but calibrated to the brand's current content capacity and budget.</div></div>
+    <div class="smart-cell"><div class="smart-letter">R</div><div class="smart-word">Relevant</div><div class="smart-desc">Every goal connects to investor acquisition, brokerage leads, CRE deals, or brand authority.</div></div>
+    <div class="smart-cell"><div class="smart-letter">T</div><div class="smart-word">Time-bound</div><div class="smart-word" style="margin-top:4px;"></div><div class="smart-desc">Deadlines set at Months 3, 6, and 12 to create urgency and regular review checkpoints.</div></div>
+  </div>
+  <div class="grid-2">
+    <div class="card card-gold"><div class="card-icon">📈</div><h3>Goal 1 — Audience Growth</h3><p>Grow combined following to <strong>10,000 engaged followers</strong> across LinkedIn, Instagram, and Facebook within 12 months, with 15% month-over-month growth rate in the first 6 months across all three business verticals.</p></div>
+    <div class="card card-gold"><div class="card-icon">🎯</div><h3>Goal 2 — Investment Lead Generation</h3><p>Generate <strong>50 Investor Club sign-ups/month</strong> from social by Month 6 and <strong>30 discovery call bookings/month</strong> by Month 9, all tracked via UTM-tagged links from LinkedIn, Instagram, and paid campaigns.</p></div>
+    <div class="card card-gold"><div class="card-icon">🏘️</div><h3>Goal 3 — Brokerage Inquiry Generation</h3><p>Drive <strong>20 qualified brokerage inquiry form submissions/month</strong> from social media by Month 4, covering residential buying/selling, commercial transactions, and business buy/sell services via Instagram and Facebook.</p></div>
+    <div class="card card-gold"><div class="card-icon">🏗️</div><h3>Goal 4 — CRE Deal Visibility</h3><p>Publish <strong>2 CRE deal spotlights or market insight posts per month</strong> on LinkedIn and YouTube. Achieve 500+ impressions per post and drive <strong>10 qualified CRE investor inquiries per month</strong> by Month 6.</p></div>
+    <div class="card card-gold"><div class="card-icon">🎬</div><h3>Goal 5 — Video & Content Reach</h3><p>Launch YouTube and achieve <strong>1,000 subscribers and 10,000 total views</strong> within 6 months. Produce 1 long-form video/week and 3 short-form Reels/TikToks/week spanning syndication, brokerage tips, and CRE education.</p></div>
+    <div class="card card-gold"><div class="card-icon">💬</div><h3>Goal 6 — Community & Brand Authority</h3><p>Build a Facebook Investor Community Group to <strong>2,000 members</strong> within 12 months. Maintain ≥3% LinkedIn engagement rate. Grow email list by <strong>500 subscribers/month</strong>. Host 1 live Q&A per month with 100+ viewers.</p></div>
+  </div>
+</div>
+
+<!-- 2: PERSONAS -->
+<div class="section" id="s2">
+  <div class="section-eyebrow"><div class="section-num">2</div><div class="section-label">Audience</div></div>
+  <h2>Customer Personas</h2>
+  <p class="section-intro">Four distinct personas across Alchemy's three business lines. Every piece of content should speak directly to at least one of these real people — their pain points, goals, and preferred platforms.</p>
+  <div class="grid-2" style="margin-bottom:20px;">
+    <div class="persona-card">
+      <div class="persona-header"><div class="persona-avatar">M</div><div><div class="persona-name">Marcus — The Aspiring Passive Investor</div><div class="persona-tagline">Syndication & Fund Management client</div></div></div>
+      <div class="persona-body">
+        <div class="persona-row"><div class="persona-row-label">Age / Role</div><div class="persona-row-val">32–44 · Engineer, Doctor, Attorney, Corporate Manager</div></div>
+        <div class="persona-row"><div class="persona-row-label">Income</div><div class="persona-row-val">$120K–$250K/yr · Savings but no clear investment plan</div></div>
+        <div class="persona-row"><div class="persona-row-label">Goals</div><div class="persona-row-val">Replace W2 income with passive income; retire early; achieve time freedom through real estate</div></div>
+        <div class="persona-row"><div class="persona-row-label">Pain Points</div><div class="persona-row-val">Overwhelmed by RE complexity; fears losing capital; no time to manage properties actively</div></div>
+        <div class="persona-row"><div class="persona-row-label">Platforms</div><div class="persona-row-val"><span class="tag">LinkedIn</span><span class="tag">Instagram</span><span class="tag">YouTube</span></div></div>
+        <div class="persona-row"><div class="persona-row-label">Content</div><div class="persona-row-val">Syndication explainers, passive income calculators, step-by-step guides, investor success stories</div></div>
+      </div>
+    </div>
+    <div class="persona-card">
+      <div class="persona-header"><div class="persona-avatar">D</div><div><div class="persona-name">Diana — The Accredited CRE Diversifier</div><div class="persona-tagline">CRE & Fund Management client</div></div></div>
+      <div class="persona-body">
+        <div class="persona-row"><div class="persona-row-label">Age / Role</div><div class="persona-row-val">45–62 · Business owner, retired executive, high-net-worth individual</div></div>
+        <div class="persona-row"><div class="persona-row-label">Net Worth</div><div class="persona-row-val">$1M+ · Already in stocks/bonds; seeking CRE, hotel, or multifamily exposure</div></div>
+        <div class="persona-row"><div class="persona-row-label">Goals</div><div class="persona-row-val">Portfolio diversification, inflation hedge, stable quarterly distributions, 1031 exchange strategies</div></div>
+        <div class="persona-row"><div class="persona-row-label">Pain Points</div><div class="persona-row-val">Hard to trust new operators; wants full deal transparency; skeptical of unproven syndicators</div></div>
+        <div class="persona-row"><div class="persona-row-label">Platforms</div><div class="persona-row-val"><span class="tag">LinkedIn</span><span class="tag">Facebook</span><span class="tag">YouTube</span></div></div>
+        <div class="persona-row"><div class="persona-row-label">Content</div><div class="persona-row-val">CRE deal performance data, market analysis, team credibility posts, 1031 exchange guides</div></div>
+      </div>
+    </div>
+    <div class="persona-card">
+      <div class="persona-header"><div class="persona-avatar">S</div><div><div class="persona-name">Sarah — The Property Buyer/Seller</div><div class="persona-tagline">Residential & Commercial Brokerage client</div></div></div>
+      <div class="persona-body">
+        <div class="persona-row"><div class="persona-row-label">Age / Role</div><div class="persona-row-val">28–55 · First-time homebuyer, homeowner selling, commercial property client</div></div>
+        <div class="persona-row"><div class="persona-row-label">Need</div><div class="persona-row-val">Buying or selling a home, condo, commercial building, or investment property in FL/NJ area</div></div>
+        <div class="persona-row"><div class="persona-row-label">Goals</div><div class="persona-row-val">Smooth, guided transaction process; fair market value; expert local market knowledge</div></div>
+        <div class="persona-row"><div class="persona-row-label">Pain Points</div><div class="persona-row-val">Overwhelmed by paperwork; unsure of pricing; fears choosing the wrong agent or missing deals</div></div>
+        <div class="persona-row"><div class="persona-row-label">Platforms</div><div class="persona-row-val"><span class="tag">Instagram</span><span class="tag">Facebook</span><span class="tag">YouTube</span></div></div>
+        <div class="persona-row"><div class="persona-row-label">Content</div><div class="persona-row-val">Property listings, buyer/seller tips, local market updates, "just sold" posts, process guides</div></div>
+      </div>
+    </div>
+    <div class="persona-card">
+      <div class="persona-header"><div class="persona-avatar">B</div><div><div class="persona-name">Brian — The Business Owner</div><div class="persona-tagline">Business Buy/Sell Brokerage client</div></div></div>
+      <div class="persona-body">
+        <div class="persona-row"><div class="persona-row-label">Age / Role</div><div class="persona-row-val">38–60 · Restaurant owner, retailer, service business owner, or aspiring entrepreneur</div></div>
+        <div class="persona-row"><div class="persona-row-label">Need</div><div class="persona-row-val">Selling an existing business or acquiring a cash-flowing business with professional guidance</div></div>
+        <div class="persona-row"><div class="persona-row-label">Goals</div><div class="persona-row-val">Exit at maximum valuation; find a business with strong cash flow; confidential, professional process</div></div>
+        <div class="persona-row"><div class="persona-row-label">Pain Points</div><div class="persona-row-val">No experience selling/buying businesses; fears confidentiality breach; unsure of business valuation</div></div>
+        <div class="persona-row"><div class="persona-row-label">Platforms</div><div class="persona-row-val"><span class="tag">LinkedIn</span><span class="tag">Facebook</span><span class="tag">Instagram</span></div></div>
+        <div class="persona-row"><div class="persona-row-label">Content</div><div class="persona-row-val">Business acquisition tips, valuation guides, success stories, "how to sell your business" content</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3: COMPETITORS -->
+<div class="section" id="s3">
+  <div class="section-eyebrow"><div class="section-num">3</div><div class="section-label">Market Intelligence</div></div>
+  <h2>Competitor Analysis</h2>
+  <p class="section-intro">Alchemy competes across three distinct markets. Understanding each competitive landscape helps identify white-space opportunities and sharpen positioning for each service line.</p>
+  <div class="grid-2" style="margin-bottom:20px;">
+    <div class="card"><h3>🔵 Fundrise (Syndication/Investment)</h3><p style="margin-bottom:8px;"><strong style="color:var(--gold-dark);">Strengths:</strong> Massive content engine, polished video production, 200K+ followers, strong SEO blog</p><p style="margin-bottom:8px;"><strong style="color:var(--gold-dark);">Weaknesses:</strong> Impersonal/corporate tone, lacks founder-led storytelling, doesn't engage comments</p><p><strong style="color:var(--gold-dark);">Alchemy's Edge:</strong> Lead with Ankit's personal story — pharmacist to multi-industry entrepreneur to Hilton/Marriott hotel investor. That journey is infinitely more compelling than a faceless platform.</p></div>
+    <div class="card"><h3>🟠 Cardone Capital (CRE Syndication)</h3><p style="margin-bottom:8px;"><strong style="color:var(--gold-dark);">Strengths:</strong> Grant Cardone's massive personal brand, aggressive video strategy, $4B+ AUM for credibility</p><p style="margin-bottom:8px;"><strong style="color:var(--gold-dark);">Weaknesses:</strong> High-pressure tone, polarizing personality, less focus on community trust-building</p><p><strong style="color:var(--gold-dark);">Alchemy's Edge:</strong> Co-investing alongside clients in every deal. That alignment of interests is a powerful differentiator — lead with it in every CRE post.</p></div>
+    <div class="card"><h3>🏘️ Local RE Brokerages (Brokerage)</h3><p style="margin-bottom:8px;"><strong style="color:var(--gold-dark);">Strengths:</strong> Established local relationships, market familiarity, word-of-mouth referrals</p><p style="margin-bottom:8px;"><strong style="color:var(--gold-dark);">Weaknesses:</strong> Minimal social media presence, generic "just listed" content, no content strategy</p><p><strong style="color:var(--gold-dark);">Alchemy's Edge:</strong> A sophisticated, educational brokerage content strategy immediately positions Alchemy as the market-savvy, investor-grade broker — not just a listing agent.</p></div>
+    <div class="card"><h3>💼 Business Brokers (Business Buy/Sell)</h3><p style="margin-bottom:8px;"><strong style="color:var(--gold-dark);">Strengths:</strong> Specialized databases (BizBuySell), industry relationships, confidentiality processes</p><p style="margin-bottom:8px;"><strong style="color:var(--gold-dark);">Weaknesses:</strong> Almost zero social media content; no education or thought leadership for buyers/sellers</p><p><strong style="color:var(--gold-dark);">Alchemy's Edge:</strong> Own the "business buyer/seller education" space on LinkedIn and Facebook. Nobody is doing it well — it's a wide-open opportunity.</p></div>
+  </div>
+  <div class="card dark-card"><h3 style="margin-bottom:12px;">🎯 Alchemy's Unified Positioning Statement</h3><p style="font-size:14px;line-height:1.8;">"Whether you're a busy professional seeking passive income through real estate syndication, a buyer or seller navigating residential or commercial transactions, or a business owner looking to exit or acquire — Alchemy Wealth Builders is your single trusted partner. Led by Ankit Desai, a licensed agent with experience across hotels, multifamily, assisted living, and business ventures, we co-invest alongside you, simplify the complex, and deliver results with <strong style="color:var(--gold);">integrity, expertise, and personalized service</strong>."</p></div>
+</div>
+
+<!-- 4: PLATFORMS -->
+<div class="section" id="s4">
+  <div class="section-eyebrow"><div class="section-num">4</div><div class="section-label">Channel Strategy</div></div>
+  <h2>Platform Selection & Strategy</h2>
+  <p class="section-intro">Each platform serves one or more of Alchemy's three business lines. The platform strategy ensures that syndication investors, brokerage clients, and CRE prospects all receive content optimized for where they spend their time.</p>
+  <div class="grid-3" style="margin-bottom:20px;">
+    <div class="platform-card platform-primary"><div class="platform-badge">Priority #1</div><div class="platform-name">LinkedIn</div><div class="platform-role">Syndication Authority + CRE + Business Buy/Sell</div><div class="platform-stat">Audience: 38–65 · Accredited investors, business owners, executives, RE professionals</div><ul class="card ul"><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Thought leadership: syndication, 1031s, CRE market trends</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Deal case studies with real underwriting numbers</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Business acquisition tips and market commentary</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">›</span>3x/week · Best investor and B2B conversion rate</li></ul></div>
+    <div class="platform-card platform-primary"><div class="platform-badge">Priority #2</div><div class="platform-name">Instagram</div><div class="platform-role">Brokerage Listings + Brand Awareness + Lifestyle</div><div class="platform-stat">Audience: 28–48 · Aspiring investors, homebuyers/sellers, RE professionals, lifestyle audience</div><ul class="card ul"><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Property listing showcases and virtual tours</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Reels: buyer/seller tips, investing 101, lifestyle content</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Stories: polls, Q&A, behind-the-scenes property tours</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">›</span>1x/day · CTA to brokerage inquiry + Investor Club</li></ul></div>
+    <div class="platform-card"><div class="platform-name">YouTube</div><div class="platform-role">Trust Building, Education & SEO</div><div class="platform-stat">Audience: 30–58 · Research-stage investors and buyers, high purchase intent</div><ul class="card ul"><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Syndication explainers, CRE market deep-dives</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Brokerage guides: "How to buy/sell a home in FL"</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">›</span>1x/week · Repurpose into 3–5 short clips</li></ul></div>
+    <div class="platform-card"><div class="platform-name">Facebook</div><div class="platform-role">Community, Local Brokerage & Nurturing</div><div class="platform-stat">Audience: 38–62 · Warm leads, local property buyers/sellers, investors</div><ul class="card ul"><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Private Investor Community Group (2,000 member goal)</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Local brokerage listings and open house promotions</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">›</span>3x/week posts + daily group management</li></ul></div>
+    <div class="platform-card"><div class="platform-name">TikTok</div><div class="platform-role">Reach, Awareness & Younger Audience</div><div class="platform-stat">Audience: 24–38 · Younger aspiring investors, first-time buyers, entrepreneurs</div><ul class="card ul"><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>Quick RE/investing tips (30–60s) — viral potential</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;margin-bottom:3px;"><span style="position:absolute;left:0;color:var(--gold);">›</span>"Did you know?" brokerage and CRE facts</li><li style="font-size:12px;color:var(--text-secondary);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">›</span>5x/week · Repurpose IG Reels directly</li></ul></div>
+  </div>
+</div>
+
+<!-- 5: CONTENT PILLARS -->
+<div class="section" id="s5">
+  <div class="section-eyebrow"><div class="section-num">5</div><div class="section-label">Content Strategy</div></div>
+  <h2>Content Pillars</h2>
+  <p class="section-intro">Seven pillars ensure every business line — Syndication, Brokerage, and CRE — has dedicated content. Each pillar serves a specific audience persona and stage of the buyer/investor journey.</p>
+  <div class="grid-3" style="margin-bottom:20px;">
+    <div class="pillar-card"><div class="pillar-num">01</div><div class="pillar-name">Real Estate Education</div><div class="pillar-desc">The cornerstone pillar. Position Alchemy as the trusted educator across all three service lines — making complex real estate topics simple and actionable.</div><ul class="pillar-examples"><li>What is a real estate syndication? (beginner guide)</li><li>How 1031 exchanges work — step by step</li><li>Passive vs. active investing: which is right for you?</li><li>How to value a commercial property (cap rate explained)</li><li>What to look for when buying a business</li></ul></div>
+    <div class="pillar-card"><div class="pillar-num">02</div><div class="pillar-name">Deal Spotlight & CRE Opportunities</div><div class="pillar-desc">Showcase syndication deals, CRE acquisitions, hotel investments, multifamily projects, and assisted living opportunities — builds credibility and FOMO with accredited investors.</div><ul class="pillar-examples"><li>Deal announcement: 200-unit multifamily, Tampa FL</li><li>Behind-the-scenes: Hilton/Marriott hotel acquisition process</li><li>Assisted living investing: the emerging CRE opportunity</li><li>How we underwrote our last syndication deal</li><li>Q3 investor distribution recap and portfolio update</li></ul></div>
+    <div class="pillar-card"><div class="pillar-num">03</div><div class="pillar-name">Brokerage Showcase</div><div class="pillar-desc">A dedicated pillar for Alchemy's brokerage services — residential listings, commercial properties, and business buy/sell. Drives direct inquiry from buyers, sellers, and business owners.</div><ul class="pillar-examples"><li>Just Listed: [property address] — single family, FL</li><li>Just Sold: helping a family find their dream home</li><li>"5 things to do before listing your commercial property"</li><li>Business spotlight: cash-flowing restaurant for sale</li><li>Buyer's guide: what to expect when purchasing a business</li></ul></div>
+    <div class="pillar-card"><div class="pillar-num">04</div><div class="pillar-name">Financial Freedom Lifestyle</div><div class="pillar-desc">Inspire action by painting a vivid picture of the life passive income enables — the emotional engine that drives passive investor conversions and brokerage referrals.</div><ul class="pillar-examples"><li>"What would you do with $5K/month in passive income?"</li><li>From W2 employee to passive income earner — a real story</li><li>The math of financial independence through real estate</li><li>Why Ankit left his corporate career to build Alchemy</li><li>Investing while traveling: the freedom lifestyle</li></ul></div>
+    <div class="pillar-card"><div class="pillar-num">05</div><div class="pillar-name">Market Intelligence & Insights</div><div class="pillar-desc">Data-driven commentary on real estate markets, interest rates, CRE cap rates, and business acquisition trends — establishes thought leadership with serious investors and clients.</div><ul class="pillar-examples"><li>Fed rate decisions: what this means for CRE buyers</li><li>Best US markets for multifamily investing in 2025</li><li>Hotel & hospitality sector: post-COVID recovery data</li><li>Local FL real estate market update — monthly video</li><li>Business acquisition trends: industries seeing activity</li></ul></div>
+    <div class="pillar-card"><div class="pillar-num">06</div><div class="pillar-name">Behind the Brand</div><div class="pillar-desc">Build the human trust layer by showcasing Ankit Desai's unique background — pharmacist, professor, restaurant owner, hotel investor, RE agent — and the team's expertise and values.</div><ul class="pillar-examples"><li>Ankit's origin story: from pharmacology to real estate</li><li>Behind the deal: walking a potential hotel acquisition</li><li>Our co-investment philosophy — why we invest too</li><li>Values: integrity, excellence, growth in every transaction</li><li>Day-in-the-life: what a closing day looks like at Alchemy</li></ul></div>
+    <div class="pillar-card"><div class="pillar-num">07</div><div class="pillar-name">Social Proof & Community</div><div class="pillar-desc">Let investors and clients sell for Alchemy — investor testimonials, "just closed" celebrations, buyer success stories, and community milestones create powerful third-party validation.</div><ul class="pillar-examples"><li>Investor spotlight: "How I earned my first passive check"</li><li>"Just closed" — helping a buyer find their perfect home</li><li>Business seller success: sold in 60 days above asking</li><li>Community milestone: 100 Investor Club members!</li><li>Google review spotlight: what clients are saying</li></ul></div>
+  </div>
+</div>
+
+<!-- 6: CONTENT CALENDAR -->
+<div class="section" id="s6">
+  <div class="section-eyebrow"><div class="section-num">6</div><div class="section-label">Planning</div></div>
+  <h2>Content Calendar — Month 1 Sample</h2>
+  <p class="section-intro">A 4-week sample calendar showing how all three business lines (Syndication, Brokerage, CRE) rotate through the content pillars across platforms — ensuring no service line is neglected.</p>
+  <table class="calendar-table">
+    <thead><tr><th>Week</th><th>Day</th><th>Pillar</th><th>Content Idea</th><th>Platform(s)</th><th>Format</th></tr></thead>
+    <tbody>
+      <tr><td>Week 1</td><td>Mon</td><td>Education</td><td>"What is a Real Estate Syndication?" — beginner guide for busy professionals</td><td><span class="ptag tag-li">LinkedIn</span><span class="ptag tag-ig">Instagram</span></td><td>Carousel + Article</td></tr>
+      <tr><td></td><td>Tue</td><td>Brokerage</td><td>Property listing showcase: residential home, featuring neighborhood highlights</td><td><span class="ptag tag-ig">Instagram</span><span class="ptag tag-fb">Facebook</span></td><td>Photo + Reel tour</td></tr>
+      <tr><td></td><td>Wed</td><td>Behind the Brand</td><td>Ankit's origin story: from pharmacy professor to Hilton/Marriott hotel investor</td><td><span class="ptag tag-li">LinkedIn</span><span class="ptag tag-yt">YouTube</span></td><td>Long-form video</td></tr>
+      <tr><td></td><td>Fri</td><td>Market Insights</td><td>"Top 3 CRE markets we're watching for multifamily investment in 2025"</td><td><span class="ptag tag-li">LinkedIn</span><span class="ptag tag-fb">Facebook</span></td><td>Data carousel</td></tr>
+      <tr><td></td><td>Daily</td><td>All Pillars</td><td>Instagram Stories: polls ("Investor or buyer?"), Q&A box, daily tips</td><td><span class="ptag tag-ig">Instagram</span></td><td>Stories (5–7/day)</td></tr>
+      <tr><td>Week 2</td><td>Mon</td><td>Financial Freedom</td><td>"The math of replacing your $120K salary with real estate passive income"</td><td><span class="ptag tag-ig">Instagram</span><span class="ptag tag-tk">TikTok</span></td><td>Reel (60s)</td></tr>
+      <tr><td></td><td>Tue</td><td>Brokerage</td><td>"5 things to do before listing your commercial property" — seller guide</td><td><span class="ptag tag-li">LinkedIn</span><span class="ptag tag-ig">Instagram</span></td><td>Carousel</td></tr>
+      <tr><td></td><td>Wed</td><td>Deal Spotlight</td><td>CRE case study: hotel acquisition deal — location, underwriting, partnership with Hilton</td><td><span class="ptag tag-yt">YouTube</span><span class="ptag tag-li">LinkedIn</span></td><td>Video + Article</td></tr>
+      <tr><td></td><td>Thu</td><td>Education</td><td>"How a 1031 Exchange works — and when it makes sense for CRE investors"</td><td><span class="ptag tag-yt">YouTube</span><span class="ptag tag-ig">Instagram</span></td><td>Video + Carousel</td></tr>
+      <tr><td></td><td>Sat</td><td>Social Proof</td><td>Investor spotlight: "How I earned my first passive distribution from Alchemy"</td><td><span class="ptag tag-ig">Instagram</span><span class="ptag tag-fb">Facebook</span></td><td>Quote graphic + video</td></tr>
+      <tr><td>Week 3</td><td>Mon</td><td>Education</td><td>"Business buying 101: what to look for before signing the LOI"</td><td><span class="ptag tag-li">LinkedIn</span><span class="ptag tag-fb">Facebook</span></td><td>Article + Carousel</td></tr>
+      <tr><td></td><td>Tue</td><td>Brokerage</td><td>Just closed! — residential buyer success story with key stats (days on market, % over ask)</td><td><span class="ptag tag-ig">Instagram</span><span class="ptag tag-fb">Facebook</span></td><td>Graphic + caption</td></tr>
+      <tr><td></td><td>Wed</td><td>Community</td><td>Live Q&A: "Ask Ankit anything about RE investing, brokerage, or buying a business"</td><td><span class="ptag tag-ig">Instagram</span><span class="ptag tag-fb">Facebook</span></td><td>Live (45 min)</td></tr>
+      <tr><td></td><td>Fri</td><td>Market Insights</td><td>Monthly market update: FL real estate + CRE cap rates + business acquisition activity</td><td><span class="ptag tag-yt">YouTube</span><span class="ptag tag-li">LinkedIn</span></td><td>Video (15 min)</td></tr>
+      <tr><td>Week 4</td><td>Mon</td><td>Financial Freedom</td><td>"What $50K invested in a multifamily syndication could look like in 5 years"</td><td><span class="ptag tag-li">LinkedIn</span><span class="ptag tag-ig">Instagram</span></td><td>Infographic carousel</td></tr>
+      <tr><td></td><td>Tue</td><td>Brokerage</td><td>Business spotlight: cash-flowing restaurant for sale — location, revenue, asking price</td><td><span class="ptag tag-li">LinkedIn</span><span class="ptag tag-fb">Facebook</span></td><td>Listing post + video</td></tr>
+      <tr><td></td><td>Wed</td><td>Behind the Brand</td><td>Site visit walkthrough: touring a potential multifamily or assisted living acquisition</td><td><span class="ptag tag-yt">YouTube</span><span class="ptag tag-tk">TikTok</span></td><td>Vlog-style video</td></tr>
+      <tr><td></td><td>Fri</td><td>Education</td><td>"The accredited investor definition — and what CRE opportunities it unlocks for you"</td><td><span class="ptag tag-li">LinkedIn</span><span class="ptag tag-ig">Instagram</span></td><td>Article + Carousel</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 7: CONTENT FORMATS -->
+<div class="section" id="s7">
+  <div class="section-eyebrow"><div class="section-num">7</div><div class="section-label">Execution</div></div>
+  <h2>Content Formats</h2>
+  <p class="section-intro">Each format is mapped to the business lines it best serves. Brokerage needs visual listing content; CRE/Syndication needs data-driven depth; both need trust-building stories.</p>
+  <div class="grid-4">
+    <div class="card card-gold"><div class="card-icon">🎬</div><h3>Short-Form Video (Reels/TikTok)</h3><ul><li>15–90 seconds, hook in first 3s</li><li>Brokerage: property tours, "just sold"</li><li>Investing: "did you know?" CRE facts</li><li>Captions always on, 1 idea per video</li><li>CTA: link in bio (brokerage or club)</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">📽️</div><h3>Long-Form Video (YouTube)</h3><ul><li>10–25 min explainers and walkthroughs</li><li>Deal deep-dives: hotel, multifamily, RAL</li><li>Brokerage guides: "how to buy/sell in FL"</li><li>SEO-optimized titles and chapters</li><li>Repurpose into 3–5 short clips</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">🖼️</div><h3>Carousels (LinkedIn/Instagram)</h3><ul><li>5–10 slides: education or listing</li><li>Slide 1 = bold hook/property highlight</li><li>Last slide = clear CTA with link</li><li>Branded navy + gold design template</li><li>Save-worthy investor education content</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">✍️</div><h3>Thought Leadership Articles</h3><ul><li>800–1,500 words on LinkedIn</li><li>CRE market analysis, deal insights</li><li>Business acquisition and exit tips</li><li>Data-backed, unique perspective</li><li>2x/month minimum from Ankit</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">🏠</div><h3>Listing Showcase Posts</h3><ul><li>Professional photography mandatory</li><li>Key stats: beds/baths, sqft, price, area</li><li>Video walkthrough for every listing</li><li>Business listings: revenue, industry, ask</li><li>CTA: "Inquire via link in bio"</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">🔴</div><h3>Live Streams & Webinars</h3><ul><li>Monthly investor Q&A with Ankit</li><li>Deal announcement events (CRE/syndication)</li><li>Buyer/seller panel discussions</li><li>Promote 1 week prior; record & repurpose</li><li>Drive to Investor Club or brokerage inquiry</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">📊</div><h3>Infographics & Data Posts</h3><ul><li>CRE market stats, cap rate trends</li><li>Syndication return comparisons</li><li>Brokerage: days-on-market, price trends</li><li>Source-attributed, navy/gold branded</li><li>High shareability for LinkedIn/IG</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">📖</div><h3>Stories (Ephemeral Content)</h3><ul><li>Daily behind-the-scenes at Alchemy</li><li>Property visit previews before listing</li><li>Polls: "Investor or homebuyer?" type Q&As</li><li>Save key stories to Highlights by category</li><li>Drives DMs — primary lead source on IG</li></ul></div>
+  </div>
+</div>
+
+<!-- 8: POSTING SCHEDULE -->
+<div class="section" id="s8">
+  <div class="section-eyebrow"><div class="section-num">8</div><div class="section-label">Scheduling</div></div>
+  <h2>Posting Schedule</h2>
+  <p class="section-intro">This weekly rhythm serves all three business lines — investor content dominates LinkedIn mid-week while brokerage listings and lifestyle content runs on Instagram daily. Consistency drives algorithm reach.</p>
+
+  <div class="schedule-row"><div class="schedule-day">Monday</div><div class="schedule-items"><div class="schedule-item"><strong>LinkedIn</strong> Syndication/CRE education carousel · 8 AM ET</div><div class="schedule-item"><strong>Instagram</strong> Investing Reel or brokerage carousel · 7 PM ET</div><div class="schedule-item"><strong>TikTok</strong> RE tip or "did you know?" short · 6 PM ET</div><div class="schedule-item"><strong>Stories</strong> Poll + Q&A sticker · All day</div></div></div>
+  <div class="schedule-row"><div class="schedule-day">Tuesday</div><div class="schedule-items"><div class="schedule-item"><strong>Instagram</strong> Property listing showcase or "just sold" · 8 AM ET</div><div class="schedule-item"><strong>Facebook</strong> Local listing post or community question · 10 AM ET</div><div class="schedule-item"><strong>TikTok</strong> Brokerage tip or property tour · 12 PM ET</div><div class="schedule-item"><strong>LinkedIn</strong> Brokerage or business buy/sell tip · 12 PM ET</div></div></div>
+  <div class="schedule-row"><div class="schedule-day">Wednesday</div><div class="schedule-items"><div class="schedule-item"><strong>LinkedIn</strong> Thought leadership: CRE insights or deal spotlight · 8 AM ET</div><div class="schedule-item"><strong>YouTube</strong> Long-form video: syndication, CRE, or brokerage guide · 12 PM ET</div><div class="schedule-item"><strong>Instagram</strong> YouTube clip Reel · 6 PM ET</div><div class="schedule-item"><strong>TikTok</strong> YouTube clip repurposed · 6 PM ET</div></div></div>
+  <div class="schedule-row"><div class="schedule-day">Thursday</div><div class="schedule-items"><div class="schedule-item"><strong>Instagram</strong> Investor testimonial or "just closed" social proof · 7 AM ET</div><div class="schedule-item"><strong>LinkedIn</strong> Market insight: CRE data, cap rates, or RE trends · 8 AM ET</div><div class="schedule-item"><strong>Facebook Group</strong> Educational resource or discussion post · 11 AM ET</div><div class="schedule-item"><strong>TikTok</strong> Market insight or myth-bust short · 5 PM ET</div></div></div>
+  <div class="schedule-row"><div class="schedule-day">Friday</div><div class="schedule-items"><div class="schedule-item"><strong>LinkedIn</strong> Ankit's personal story or behind-the-brand · 8 AM ET</div><div class="schedule-item"><strong>Instagram</strong> Financial freedom / lifestyle Reel · 12 PM ET</div><div class="schedule-item"><strong>Facebook</strong> Week-in-review: listings + investor update · 3 PM ET</div><div class="schedule-item"><strong>TikTok</strong> Weekend motivational or investor tip · 4 PM ET</div></div></div>
+  <div class="schedule-row"><div class="schedule-day">Saturday</div><div class="schedule-items"><div class="schedule-item"><strong>Instagram</strong> Property listing or open house promotion · 10 AM ET</div><div class="schedule-item"><strong>Facebook</strong> Open house event post + community engagement · 10 AM ET</div><div class="schedule-item"><strong>TikTok</strong> Property tour or Ankit founder story · 11 AM ET</div><div class="schedule-item"><strong>Stories</strong> Weekend engagement: "buyer or investor?" poll · All day</div></div></div>
+  <div class="schedule-row"><div class="schedule-day">Sunday</div><div class="schedule-items"><div class="schedule-item"><strong>Instagram</strong> Inspirational / motivational content · 6 PM ET</div><div class="schedule-item"><strong>Stories</strong> Week ahead preview — upcoming listings and content</div><div class="schedule-item highlight"><strong>Content Batch Day</strong> — plan, film, and schedule next week's posts</div></div></div>
+
+  <div style="margin-top:28px;">
+    <div class="card dark-card">
+      <h3 style="margin-bottom:16px;">Optimal Posting Times by Platform</h3>
+      <div class="grid-4" style="margin-top:8px;">
+        <div><p style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">LinkedIn</p><p style="font-size:12px;color:rgba(255,255,255,0.7);">Tue–Thu · 7–9 AM ET<br>Best: Tuesday 8 AM<br>Avoid: weekends</p></div>
+        <div><p style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">Instagram</p><p style="font-size:12px;color:rgba(255,255,255,0.7);">Daily · 7–9 AM or 6–8 PM<br>Reels: any time<br>Listings: Tue & Sat AM</p></div>
+        <div><p style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">YouTube</p><p style="font-size:12px;color:rgba(255,255,255,0.7);">Wed · 12 PM ET<br>Consistent day matters<br>Optimize titles for SEO</p></div>
+        <div><p style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">TikTok / Facebook</p><p style="font-size:12px;color:rgba(255,255,255,0.7);">TikTok: 6–9 PM daily<br>Facebook: 10 AM–12 PM<br>Both: test & iterate</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 9: PAID ADVERTISING -->
+<div class="section" id="s9">
+  <div class="section-eyebrow"><div class="section-num">9</div><div class="section-label">Paid Media</div></div>
+  <h2>Paid Advertising Strategy</h2>
+  <p class="section-intro">Paid campaigns run across three conversion tracks: Investor Club sign-ups (syndication/CRE), brokerage inquiry submissions (buyers, sellers, business clients), and discovery call bookings. Budget scales with results.</p>
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="card card-gold"><h3>Phase 1 — Months 1–3: Awareness ($500–$1,000/mo)</h3><ul><li>Boost best organic posts (engagement >5%) — across all business lines</li><li>LinkedIn Sponsored Content: reach accredited investors, business owners, RE professionals</li><li>Meta Brand Awareness: lookalike from existing contacts and email list</li><li>Instagram: promote property listings to local buyers (geo-targeted FL)</li><li>Goal: 500–1,000 new followers/month + first 10 brokerage inquiries from social</li></ul></div>
+    <div class="card card-gold"><h3>Phase 2 — Months 4–6: Lead Gen ($1,500–$3,000/mo)</h3><ul><li>LinkedIn Lead Gen Forms: target accredited investors (income $200K+, job titles: CFO, MD, attorney)</li><li>Meta Lead Ads: promote free ebook → email capture → 7-part nurture sequence</li><li>Facebook/Instagram: brokerage lead ads for local buyers and sellers (geo: FL + NJ)</li><li>Retargeting: website visitors, video viewers, ebook downloaders</li><li>Goal: 50 Investor Club sign-ups + 20 brokerage inquiries/month</li></ul></div>
+    <div class="card card-gold"><h3>Phase 3 — Months 7–12: Scale ($3,000–$5,000/mo)</h3><ul><li>Full LinkedIn InMail: CRE deal announcements to CFOs, business owners, physicians</li><li>Google Ads: "real estate syndication FL," "commercial property for sale FL," "buy a business FL"</li><li>YouTube pre-roll: warm audience retargeting with CRE deal spotlights</li><li>Facebook/Instagram: listing promotion campaigns for brokerage pipeline</li><li>Webinar funnel: paid traffic → live CRE/syndication event → Investor Club CTA</li></ul></div>
+    <div class="card card-gold"><h3>Audience Targeting by Business Line</h3><ul><li><strong>Syndication/CRE:</strong> Income $150K+, job titles (CFO, VP, MD), RE investor interests, accredited investor groups</li><li><strong>Brokerage (Residential):</strong> Geo-targeted FL/NJ, homeowner/renter demographics, life events (moving, marriage)</li><li><strong>Brokerage (Commercial):</strong> Business owners, commercial property interest, LinkedIn company size targeting</li><li><strong>Business Buy/Sell:</strong> Business owners 45–60, industry-specific (restaurants, retail, service), LinkedIn job titles</li><li><strong>Exclusions:</strong> Current Investor Club members, recent brokerage clients (avoid wasted spend)</li></ul></div>
+  </div>
+  <div class="card" style="border-color:var(--gold);background:rgba(201,168,76,0.04);">
+    <h3 style="margin-bottom:16px;">Ad Creative Framework — The 3-Part Rule</h3>
+    <div class="grid-3">
+      <div><p style="font-size:13px;font-weight:700;color:var(--gold-dark);margin-bottom:6px;">Hook (0–3 seconds)</p><p style="font-size:13px;color:var(--text-secondary);">Investing ads: "Still trading time for money?" · Brokerage: "Thinking of selling your home in FL?" · Business: "What is your business worth today?"</p></div>
+      <div><p style="font-size:13px;font-weight:700;color:var(--gold-dark);margin-bottom:6px;">Value (3–15 seconds)</p><p style="font-size:13px;color:var(--text-secondary);">Briefly explain Alchemy's unique advantage: co-investing alongside you (syndication), expert local market knowledge (brokerage), or confidential process (business buy/sell).</p></div>
+      <div><p style="font-size:13px;font-weight:700;color:var(--gold-dark);margin-bottom:6px;">CTA (15–30 seconds)</p><p style="font-size:13px;color:var(--text-secondary);">One specific action per ad: "Join the Investor Club — free," "Submit a brokerage inquiry," "Get a free business valuation," or "Book a 20-min discovery call."</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 10: COMMUNITY MANAGEMENT -->
+<div class="section" id="s10">
+  <div class="section-eyebrow"><div class="section-num">10</div><div class="section-label">Engagement</div></div>
+  <h2>Community Management Plan</h2>
+  <p class="section-intro">Social media is a conversation, not a broadcast. For Alchemy's three business lines, community management means nurturing investors toward the Investor Club, buyers/sellers toward brokerage inquiries, and business clients toward discovery calls.</p>
+  <div class="grid-2">
+    <div class="card card-gold"><div class="card-icon">⚡</div><h3>Response Time Standards</h3><ul><li><strong>Organic post comments:</strong> Reply within 2 hours (9 AM–6 PM ET business hours)</li><li><strong>Direct Messages:</strong> Respond within 4 hours; use saved replies for common FAQs per business line</li><li><strong>Facebook Group:</strong> Acknowledge within 1 hour; full response within 3 hours</li><li><strong>Brokerage property inquiries (DM):</strong> Respond within 1 hour — these are hot leads</li><li><strong>Negative comments:</strong> Respond publicly with care; offer to move to DM for complex issues</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">💎</div><h3>Daily Engagement Tactics</h3><ul><li>Reply to every comment with a follow-up question to deepen the conversation</li><li>Like and reply within the first 30 minutes of posting (signals to algorithm)</li><li>Proactively comment on target audience's posts — 10 meaningful comments/day</li><li>Tag commenters who ask great questions in follow-up educational content</li><li>DM new followers who engage with brokerage content: "Looking to buy or sell in FL?"</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">🏘️</div><h3>Facebook Community Group</h3><ul><li>Group name: "Alchemy Wealth Builders — Passive Real Estate Investor Community"</li><li>Weekly themes: Motivation Monday · Deal Discussion Wednesday · Q&A Friday</li><li>Monthly: Ankit live Q&A + exclusive early access to new syndication deal announcements</li><li>Brokerage sub-section: local property alerts and market updates for group members</li><li>Approval required for all posts; zero tolerance for spam or solicitation</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">📋</div><h3>DM & Comment Playbook by Business Line</h3><ul><li><strong>"How do I invest with Alchemy?"</strong> → Investor Club link + offer 20-min discovery call</li><li><strong>"I'm interested in a listing"</strong> → Immediately route to brokerage inquiry form + personal call</li><li><strong>"I want to sell my business"</strong> → Confidentiality assurance + book a valuation consultation</li><li><strong>"Is this a scam?"</strong> → Transparency response: share accreditations, Ankit's LinkedIn, invite a call</li><li><strong>Lead identified in comments:</strong> Tag in CRM (GoHighLevel) for follow-up within 24 hours</li></ul></div>
+  </div>
+</div>
+
+<!-- 11: INFLUENCER & PARTNERSHIPS -->
+<div class="section" id="s11">
+  <div class="section-eyebrow"><div class="section-num">11</div><div class="section-label">Partnerships</div></div>
+  <h2>Influencer & Partnership Strategy</h2>
+  <p class="section-intro">Strategic partnerships are tailored to each of Alchemy's three business lines — separate partnership categories for syndication/CRE investor acquisition, brokerage referrals, and business buy/sell deal flow.</p>
+  <div class="grid-3" style="margin-bottom:24px;">
+    <div class="card card-gold"><div class="card-icon">🎙️</div><h3>Podcast & Media (Syndication/CRE)</h3><p style="margin-bottom:10px;">Pitch Ankit as a guest on 2–4 shows/month covering passive income, CRE, and entrepreneurship. His multi-industry background (pharma → restaurant → hotel → RE) is a uniquely compelling story.</p><ul><li>Passive Income Unlocked</li><li>Real Estate Syndication Show</li><li>The Investor Mindset Podcast</li><li>Wealth Formula Podcast</li><li>Hotel Business Podcast (for hospitality CRE)</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">🤝</div><h3>Professional Referral Partners (Brokerage)</h3><p style="margin-bottom:10px;">Build a formal referral network with professionals who interact with buyers, sellers, and business owners regularly. Offer reciprocal referrals and co-branded content.</p><ul><li>CPAs and tax advisors (1031 and business sale tax advice)</li><li>Real estate attorneys and business attorneys</li><li>Mortgage brokers and SBA lenders</li><li>Business accountants and financial advisors</li><li>Local chamber of commerce partnerships</li></ul></div>
+    <div class="card card-gold"><div class="card-icon">👤</div><h3>Micro-Influencer Program</h3><p style="margin-bottom:10px;">Partner with 5–10 micro-influencers (10K–100K followers) across the FIRE movement, personal finance, real estate investing, and entrepreneurship niches.</p><ul><li>Offer: affiliate commission per Investor Club sign-up or brokerage inquiry</li><li>Provide: co-branded content assets and deal access previews</li><li>Require: authentic disclosure and full FTC compliance</li><li>Track: unique UTM links per influencer per business line</li><li>Review: 30-day performance minimum before scaling budget</li></ul></div>
+  </div>
+  <div class="card dark-card">
+    <h3 style="margin-bottom:16px;">Partnership Outreach Approach</h3>
+    <p style="font-size:14px;line-height:1.8;margin-bottom:16px;">Lead with value — reference specific content of theirs, propose a concrete collaboration (joint webinar, co-authored carousel, referral agreement), and explain the mutual benefit clearly. Ankit's background is the hook: pharmacist turned multi-industry entrepreneur, licensed RE agent representing hotel investors, homebuyers, and business owners simultaneously.</p>
+    <div class="grid-3">
+      <div><p style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">Outreach Volume</p><p style="font-size:12px;color:rgba(255,255,255,0.6);">5–10 personalized outreach messages/week across all three business line categories</p></div>
+      <div><p style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">Follow-Up Cadence</p><p style="font-size:12px;color:rgba(255,255,255,0.6);">One follow-up after 5 business days if no response. Never follow up more than twice per contact.</p></div>
+      <div><p style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">Success Metric</p><p style="font-size:12px;color:rgba(255,255,255,0.6);">Track partner-attributed Investor Club sign-ups and brokerage inquiries via unique UTM links monthly</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 12: KPIs -->
+<div class="section" id="s12">
+  <div class="section-eyebrow"><div class="section-num">12</div><div class="section-label">Measurement</div></div>
+  <h2>KPIs & Metrics Framework</h2>
+  <p class="section-intro">KPIs are organized across three conversion tracks — Syndication/Investment, Brokerage, and CRE — plus the supporting awareness and engagement metrics that drive them. Every metric connects to a real business outcome.</p>
+  <div class="grid-3" style="margin-bottom:24px;">
+    <div class="kpi-block">
+      <div class="kpi-title">Awareness & Growth Metrics</div>
+      <div class="kpi-row"><span class="kpi-name">Total followers (combined)</span><span class="kpi-target">10,000 by Month 12</span></div>
+      <div class="kpi-row"><span class="kpi-name">LinkedIn followers</span><span class="kpi-target">3,000 by Month 12</span></div>
+      <div class="kpi-row"><span class="kpi-name">Instagram followers</span><span class="kpi-target">5,000 by Month 12</span></div>
+      <div class="kpi-row"><span class="kpi-name">YouTube subscribers</span><span class="kpi-target">1,000 by Month 6</span></div>
+      <div class="kpi-row"><span class="kpi-name">Facebook Group members</span><span class="kpi-target">2,000 by Month 12</span></div>
+      <div class="kpi-row"><span class="kpi-name">Monthly combined reach</span><span class="kpi-target">100,000+ by Month 9</span></div>
+      <div class="kpi-row"><span class="kpi-name">MoM follower growth rate</span><span class="kpi-target">≥ 15% (Months 1–6)</span></div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-title">Engagement Metrics</div>
+      <div class="kpi-row"><span class="kpi-name">LinkedIn engagement rate</span><span class="kpi-target">≥ 3% per post</span></div>
+      <div class="kpi-row"><span class="kpi-name">Instagram engagement rate</span><span class="kpi-target">≥ 4% per post</span></div>
+      <div class="kpi-row"><span class="kpi-name">Average Reel views</span><span class="kpi-target">2,000+ by Month 6</span></div>
+      <div class="kpi-row"><span class="kpi-name">YouTube avg. watch time</span><span class="kpi-target">≥ 50% of video length</span></div>
+      <div class="kpi-row"><span class="kpi-name">Story views per story</span><span class="kpi-target">300+ by Month 6</span></div>
+      <div class="kpi-row"><span class="kpi-name">Comments per post</span><span class="kpi-target">10+ average by Month 4</span></div>
+      <div class="kpi-row"><span class="kpi-name">DM conversations/week</span><span class="kpi-target">20+ by Month 4</span></div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-title">Conversion Metrics (Most Critical)</div>
+      <div class="kpi-row"><span class="kpi-name">Investor Club sign-ups/mo</span><span class="kpi-target">50+ by Month 6</span></div>
+      <div class="kpi-row"><span class="kpi-name">Discovery call bookings/mo</span><span class="kpi-target">30+ by Month 9</span></div>
+      <div class="kpi-row"><span class="kpi-name">Brokerage inquiries/mo</span><span class="kpi-target">20+ by Month 4</span></div>
+      <div class="kpi-row"><span class="kpi-name">CRE investor inquiries/mo</span><span class="kpi-target">10+ by Month 6</span></div>
+      <div class="kpi-row"><span class="kpi-name">Ebook downloads/month</span><span class="kpi-target">200+ by Month 4</span></div>
+      <div class="kpi-row"><span class="kpi-name">Email list growth/month</span><span class="kpi-target">500 new subscribers</span></div>
+      <div class="kpi-row"><span class="kpi-name">Social → website traffic</span><span class="kpi-target">1,000 sessions/mo by M6</span></div>
+    </div>
+  </div>
+  <div class="card" style="border-top: 3px solid var(--gold);">
+    <h3 style="margin-bottom:16px;">Recommended Analytics Tools</h3>
+    <div class="grid-4">
+      <div><p style="font-size:12px;font-weight:700;color:var(--gold-dark);margin-bottom:4px;">Scheduling</p><p style="font-size:12px;color:var(--text-secondary);">Later or Buffer — visual calendar, auto-posting, unified analytics across all 5 platforms</p></div>
+      <div><p style="font-size:12px;font-weight:700;color:var(--gold-dark);margin-bottom:4px;">Reporting</p><p style="font-size:12px;color:var(--text-secondary);">Sprout Social for unified cross-platform KPI dashboard and monthly report exports</p></div>
+      <div><p style="font-size:12px;font-weight:700;color:var(--gold-dark);margin-bottom:4px;">CRM / Lead Tracking</p><p style="font-size:12px;color:var(--text-secondary);">GoHighLevel (already in use) — UTM tracking for all three conversion tracks by business line</p></div>
+      <div><p style="font-size:12px;font-weight:700;color:var(--gold-dark);margin-bottom:4px;">Design</p><p style="font-size:12px;color:var(--text-secondary);">Canva Pro for carousels, listing posts, stories, and ad creative with navy/gold brand templates</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 13: REPORTING -->
+<div class="section" id="s13">
+  <div class="section-eyebrow"><div class="section-num">13</div><div class="section-label">Optimization</div></div>
+  <h2>Reporting & Optimization Framework</h2>
+  <p class="section-intro">A structured reporting cadence ensures data directly drives content and budget decisions across all three business lines. What gets measured gets improved — and what gets improved drives investor and client growth.</p>
+  <div class="timeline" style="margin-bottom:36px;">
+    <div class="timeline-item">
+      <div class="timeline-phase">Weekly — Every Monday</div>
+      <div class="timeline-title">Content Performance Check</div>
+      <div class="timeline-desc">Review the top 3 and bottom 3 performing posts from the prior week across all business lines. Document what worked — topic, format, CTA, posting time. Track UTM-tagged link clicks separately for: Investor Club (syndication), brokerage inquiry form, and discovery call booking page. Adjust the coming week's content plan based on findings. Flag any listing inquiries from social that need same-day follow-up.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-phase">Monthly — First Monday of Month</div>
+      <div class="timeline-title">Full KPI Dashboard Review</div>
+      <div class="timeline-desc">Pull all KPI data into a unified Sprout Social or Later dashboard. Review: follower growth vs. targets, engagement benchmarks per platform, conversion funnel performance per business line (syndication vs. brokerage vs. CRE inquiries), paid ad ROAS, and email list growth. Present a 1-page summary to Ankit and the team. Adjust next month's content calendar and ad budgets based on which business line is performing best.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-phase">Quarterly — Every 3 Months</div>
+      <div class="timeline-title">Strategy Pivot Review</div>
+      <div class="timeline-desc">Full 90-day retrospective: Which platforms are driving the most leads per business line? Which content pillars are resonating — education, brokerage showcases, or CRE deal spotlights? Should budget be reallocated between business lines? Are personas still accurate? Review competitive landscape for new opportunities in syndication, brokerage, and CRE. Set revised targets and update all content calendars and paid campaign audiences.</div>
+    </div>
+    <div class="timeline-item" style="margin-bottom:0;">
+      <div class="timeline-phase">Annually — Year End</div>
+      <div class="timeline-title">Full Roadmap Refresh</div>
+      <div class="timeline-desc">Comprehensive Year 1 review vs. all SMART goals. Full competitive re-analysis across all three verticals. Platform algorithm changes and new feature review (e.g., LinkedIn's new ad formats, Instagram's shift in Reels algorithm). Update personas based on actual investor and client data from GoHighLevel CRM. Set Year 2 SMART goals with refined budget allocation per business line. Celebrate wins, document learnings, and rebuild the content calendar for Year 2.</div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card card-gold">
+      <h3>12-Month Growth Milestones</h3>
+      <ul>
+        <li><strong>Month 1:</strong> All 5 platforms optimized, content system live, brokerage inquiry form linked in bios</li>
+        <li><strong>Month 3:</strong> 1,000 followers, first 10 Investor Club sign-ups, first 5 brokerage inquiries from social</li>
+        <li><strong>Month 6:</strong> 5,000 followers, 50 investor leads/month, 20 brokerage inquiries/month, YouTube at 500 subs</li>
+        <li><strong>Month 9:</strong> 7,500 followers, 30 discovery calls/month, paid campaigns ROAS positive</li>
+        <li><strong>Month 12:</strong> 10,000 followers, $1M+ in capital attributed to social, 20+ brokerage deals sourced from social media</li>
+      </ul>
+    </div>
+    <div class="card card-gold">
+      <h3>Optimization Decision Tree</h3>
+      <ul>
+        <li><strong>Engagement below 2%?</strong> → Revisit hook strategy and test new content formats or topics</li>
+        <li><strong>Brokerage inquiries flat?</strong> → Add stronger CTA to listing posts and run geo-targeted listing ads</li>
+        <li><strong>Investor Club CTR low?</strong> → Audit link-in-bio page and simplify the sign-up process</li>
+        <li><strong>CRE content underperforming?</strong> → Shift from data posts to deal story formats with real numbers</li>
+        <li><strong>Paid ROAS below 2x?</strong> → Pause, refresh creative and ad copy, narrow audience targeting</li>
+        <li><strong>One platform growing fastest?</strong> → Double content volume and budget there first</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">Alchemy Wealth Builders</div>
+  <div class="footer-tagline">Create Wealth. Simplify the Journey. Live the Life You Love.</div>
+  <div style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.35);">Founder: Ankit Desai · (727) 625-3999 · alchemywealthbuilders.com</div>
+  <div style="margin-top:20px;font-size:11px;color:rgba(255,255,255,0.2);">Social Media Management Roadmap · 2025–2026 · Confidential Strategy Document</div>
+</div>
+
+</body>
+</html>
